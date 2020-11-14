@@ -1,0 +1,36 @@
+package inheriting;
+
+import javax.swing.*;
+
+public class negative_positive
+{
+
+    public static void main(String[] args)
+    {
+        String S = JOptionPane.showInputDialog("enter the no of the elements which will be entered");
+        int n = Integer.parseInt(S);
+        int[] arr = new int[n];
+        for(int i = 0;i<n;i++)
+        {
+            S = JOptionPane.showInputDialog("enter the elements which will be entered");
+            arr[i] = Integer.parseInt(S);
+        }
+        int chechkpoint = 0;
+            int j = 0, temp;
+            for (int k = 0; k < n; k++) {
+                if (arr[k] < 0) {
+                    if (k != j) {
+                        temp = arr[k];
+                        arr[k] = arr[j];
+                        arr[j] = temp;
+                    }
+                    j++;
+                }
+            }
+        for(int l = 0;l<n;l++)
+        {
+           System.out.print(" " + arr[l]);
+        }
+
+    }
+}
