@@ -1,0 +1,71 @@
+package inheriting;
+import javax.swing.*;
+public class Reverse_array {
+
+    public static void reverserecursive(int[] arr, int start , int end )
+    {
+        int temp=0;
+       // int start = 0;
+      //  int end = size-1;
+        if(start>=end)
+        {
+            return;
+        }
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            //start++;
+          //  end--;
+            reverserecursive(arr,start+1,end-1);
+    }
+    public static void reversearray(int[] arr, int size)
+    {
+        int temp;
+        int start = 0;
+        int end = size-1;
+        while(start < end)
+        {
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+
+        }
+    }
+    public static void displayarray(int[] arr, int size)
+    {
+
+        for (int j = 0;j<size;j++)
+        {
+            System.out.print(" "+ arr[j]);
+        }
+
+
+    }
+
+    public static void inputarray(int[] arr, int size)
+    {
+
+        for (int i = 0;i<size;i++)
+        {
+            String num = JOptionPane.showInputDialog("enter the elements of the array");
+            arr[i] = Integer.parseInt(num);
+        }
+
+
+    }
+    public static void main(String[] args)
+    {
+        String S = JOptionPane.showInputDialog("ENter the no of elements");
+        int n= Integer.parseInt(S);
+        int[] arr = new int[n];
+        inputarray(arr,n);
+        reversearray(arr,n);
+        displayarray(arr,n);
+        reverserecursive(arr,0,n-1);
+        System.out.println("\n the reversed arrray is again reversed:");
+        displayarray(arr,n);
+    }
+
+}
