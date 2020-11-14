@@ -1,0 +1,45 @@
+package inheriting;
+
+import javax.swing.*;
+
+public class maximum_element {
+
+    public static void maximum_element(int[] arr, int size)
+    {
+        int max =0;
+        for (int j = 0; j < size; j++)
+        {
+            if(arr[j] > max)
+            {
+                max = arr[j];
+            }
+        }
+        System.out.println(max);
+       // int min =0;
+        for (int j = 0; j < size; j++)
+        {
+            if(arr[j] < max)
+            {
+                max = arr[j];
+            }
+        }
+        System.out.println(max);
+    }
+    public static void inputarray(int[] arr, int size)
+    {
+
+        for (int i = 0; i < size; i++)
+        {
+            String num = JOptionPane.showInputDialog("enter the elements of the array");
+            arr[i] = Integer.parseInt(num);
+        }
+    }
+    public static void main(String[] Args)
+    {
+        String S = JOptionPane.showInputDialog("ENter the no of elements");
+        int n= Integer.parseInt(S);
+        int[] arr = new int[n];
+        inputarray(arr,n);
+        maximum_element(arr,n);
+    }
+}
