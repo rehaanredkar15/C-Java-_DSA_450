@@ -1,0 +1,37 @@
+//https://www.youtube.com/watch?v=AJ-068a-ltA
+
+
+lass Solution {
+    int getMinDiff(int[] arr, int n, int k) 
+    {
+        // code here
+       
+        Arrays.sort(arr);
+        int ans = arr[0] - arr[k-1];  //first case where biggest and smalles elements difference 
+        int small = a[0] + k;   
+        int big = a[0] -k;
+        if(small > big)
+        {
+            swap(small,big); //if our 1st element has orginal value near to bigggest element
+        }
+        for(int i = 1;i<n-1;i++)
+        {
+            int sub = arr[i] - k ;  //so the last test case whhich can cause prroblems is middleelements . so here we add and subtract the middle elemnts
+            int add = arr[i] + k;   //each element is added and subtracted to check the test cases
+            
+            if((sub>= small) || (add <= big )) //this is if the no we are searching has no possiblitiy
+            {
+                continue;
+            }
+            if((big-sub) <= (add-small)) // if we get smaller nos then we check for the differences 
+            {
+                small = sub; // accordingly the difference which is big we update are big and small
+            }
+            else 
+            {
+                big = add;   
+            }
+        }
+        return min(ans,(big-small)); //finally we return the minimum element
+    }
+}
