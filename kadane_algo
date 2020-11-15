@@ -27,6 +27,16 @@ public class union_array {
                     max_ending_here = 0;
             }
             System.out.println(max_so_far);
+            
+            /*   easy way of doing kadanes algo is 
+            
+            int cs =0, ms=0;
+            for (int i = 0; i < n; i++)
+            {
+                cs = max(cs+a[i],ms);
+                ms = (cs,ms);                
+            }
+                 */
 
         }
 }
