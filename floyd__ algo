@@ -1,0 +1,26 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        
+      int hair = nums[0];
+      int tortoise=nums[0];
+        do{
+            tortoise = nums[tortoise];
+            hair = nums[nums[hair]];
+            
+        }while(hair != tortoise);
+        
+        //the above algo we get us to the point where the hair and tortoise meets first and hence we discover the cycle 
+        
+        hair = nums[0];
+        while(tortoise != hair)
+        {
+            hair = nums[hair];
+            tortoise = nums[tortoise];
+        
+        }
+        return tortoise;
+        //after meeting at the same point we then intialise hair to start and  increment both by 1
+        
+        //this algorithm works because the when the tortoise covers,  m(the distance of the start point of loop from the array start point) + K (the distance where they first met)   , it gets to the point where it meets hairs which  is the starting point because after covering the whole loop we are in a integer multiple number, for example (if loop size is 12 then this point is 4) , as this is the starting point of the loop this is the number or location where the problem of loop starts 
+    }
+}
