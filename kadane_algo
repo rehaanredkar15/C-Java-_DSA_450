@@ -34,7 +34,7 @@ public class union_array {
             for (int i = 0; i < n; i++)
             {
                 cs = max(cs+a[i],ms);
-                ms = (cs,ms);                
+                ms = min(cs,ms);                
             }
                  */
 
