@@ -1,0 +1,35 @@
+class Solution{   
+public:
+    int getPairsCount(int arr[], int n, int k) {
+      
+        unordered_map<int,int> m;   //this is a map 
+        int c = 0;  //counter 
+        for(int i = 0; i<n; i++)    // for loop to traverse to the array 
+        { 
+            int x = k - arr[i];    //here the difference is caught like if 6 and 1 is there then the no we will get is 5 
+            
+            //remember we will set all the flags to 1 but when we will get a no with already flag 1 then we will increase the counter with counter + the flag 
+            //here the working is like follow 
+            if(m[x] == 0)    
+            {
+                m[arr[i]]++; //this is increasing the flag which happens in all cases 
+            }
+            else
+            { 
+                
+                c+=m[x];    //here is the counter and is increased by the flag of the no which we got after subtracting i.e x
+               m[arr[i]]++;   // after that we increase the flag of that no which was on our array who divided the no 
+            } 
+        }
+        return  c;
+    }
+};
+
+/*   
+
+
+
+
+
+
+*/
