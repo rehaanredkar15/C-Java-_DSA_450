@@ -1,0 +1,33 @@
+   int findLongestConseqSubseq(int arr[], int N)
+    {
+      //Your code here
+      
+       set<int> set1; //created set for removal of duplicate elements 
+       int ans = INT_MIN;
+       for(int i = 0;i<N;i++)
+       {
+           set1.insert(arr[i]);  //pushing all the elements in the set 
+       }
+       
+       for(int j = 0;j<N;j++) //this is for checking multiple sequencies present 
+       {
+           if(set1.find(arr[j] - 1 ) == set1.end())  //chechking if previous no is present consider we have found 1 so chechking if 0 is not present in the set 
+           {
+               int k = arr[j] + 1;  //now need to check if we have 2 in our set
+               
+               //this was the part my algo failed some test cases 
+               while(set1.find(k) != set1.end()) //which means if we have found 2 
+               {
+                   k++;   //i.e go and check the while condition for 3 and so on untill we found a no which is not find 
+               }
+               ans = max(ans, k-arr[j]); //now this means, above condition will fail when we reach say 6 and we dont have 6 in our set 
+               //so we will minus 6-1 i.e 5 
+               
+               
+               
+               
+           }
+       }
+           return ans;
+    }
+};
