@@ -1,0 +1,25 @@
+ 
+	    long long mi = arr[0];
+	    long long ma = arr[0];
+	    long long prod = arr[0];
+	    
+	    
+        for (int i = 1; i < n; i++) 
+        { 
+            
+            if(arr[i] < 0)
+            {
+                swap(mi,ma);
+            }
+            
+            mi =  min((long long) arr[i],mi * arr[i]);
+            ma =  max( (long long) arr[i],ma * arr[i]);
+            
+            
+            if(ma>prod)
+            {
+                prod = ma;
+            }
+        } 
+        
+        return prod; 
