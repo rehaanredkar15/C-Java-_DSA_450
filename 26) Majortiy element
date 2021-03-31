@@ -1,0 +1,30 @@
+bayer moore algorithm
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        
+        int counter = 0;
+        int number =0;
+        
+        for(int i:nums)
+        {
+            if(counter == 0)
+            {
+                number = i ;
+            } 
+            if(i == number)
+            {
+                counter = counter + 1;
+            }
+            else
+            {
+                counter -= 1;
+            }
+        }
+        
+        cout<<number;
+        return number;
+    }
+    
+};
