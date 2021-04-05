@@ -1,0 +1,46 @@
+ vector<int> spirallyTraverse(vector<vector<int> > matrix, int r, int c) 
+    {
+        
+        // code here 
+        int t =0;
+        int b = m-1;
+        int l = 0;
+        int r = n-1;
+        int dir = 0;
+        while(t<=b && l<=r )
+        {
+            if(dir == 0)
+            {
+                for(int i =l;i<=r;i++)
+                {
+                    cout<<matrix[t][i];
+                    t++;
+                }
+            }
+            else if(dir == 1 )
+            {
+                for(int k =t; k <=b ;k++)
+                {
+                    cout<<a[k][r];
+                    r--;
+                }
+            }
+            else if(dir == 2)
+            {
+                for(int k =r ;k>=l k--)
+                {
+                    cout<<a[b][k];
+                    b--;
+                }
+            }
+            else if(dir == 3 )
+            {
+                for(int k = b;k>=t;k--)
+              {
+                  cout<<a[k][l];
+                  l++;
+              }
+            }
+            
+            dir = (dir+1)%4;
+        }
