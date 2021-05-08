@@ -11,10 +11,13 @@ class Result {
     
     for(int i = 0;i<n;i++)
     {
-      if(count[str[i] - 'a'] == 1)
+      if(count[str[i] - 'a'] == 1)  //if the character  has repeating character then return that character 
         return i;
     }
     
     return -1;
   }
 }
+
+video link - 
+https://www.youtube.com/watch?v=ReUGo6fZafc&t=173s
